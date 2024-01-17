@@ -1,4 +1,5 @@
 import 'package:bethel_app_final/screens/login_page.dart';
+import 'package:bethel_app_final/screens/map_page.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -11,6 +12,6 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(home: LoginPage(),);
+    return MaterialApp(home: MapPage(),);
   }
 }
