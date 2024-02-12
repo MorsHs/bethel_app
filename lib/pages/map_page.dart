@@ -5,8 +5,6 @@ import 'package:flutter_map/flutter_map.dart';
 import 'package:flutter_map_location_marker/flutter_map_location_marker.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:latlong2/latlong.dart';
-
-
 class MapPage extends StatefulWidget {
   const MapPage({super.key});
 
@@ -15,6 +13,7 @@ class MapPage extends StatefulWidget {
 }
 
 class _MapPageState extends State<MapPage> {
+  late Future _future = _getLatitude(); //FIX FOR FUTUREBUILDER CONSTANTLY GETTING CALLED
   final mapController = MapController();
   var _userlat = 0.0;
   var _userlong = 0.0;
@@ -27,7 +26,7 @@ class _MapPageState extends State<MapPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: FutureBuilder(future: _getLatitude(), builder: (context, snapshot) {
+        body: FutureBuilder(future: _future, builder: (context, snapshot) {
           if(snapshot.connectionState == ConnectionState.waiting) {
             return const CircularProgressIndicator();
           }
@@ -39,7 +38,7 @@ class _MapPageState extends State<MapPage> {
                 onMapReady: () {
                 },
                 initialCenter: LatLng(_userlat, _userlong),
-                initialZoom: 5),
+                initialZoom: 15),
             mapController: mapController,
             children: [
               TileLayer(
@@ -48,9 +47,7 @@ class _MapPageState extends State<MapPage> {
                 subdomains: ['a', 'b', 'c'],
               ),
               CurrentLocationLayer(),
-              CustomMarker(),
-              Text("$_userlong",style: TextStyle(fontSize: 64),),
-              Text("$_userlat")
+              const CustomMarker(),
             ],);
         }
         ,)

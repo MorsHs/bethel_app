@@ -20,7 +20,7 @@ class _CustomMarkerState extends State<CustomMarker> {
           child:
           Icon(
             Icons.church,
-            color: Colors.red,
+            color: Colors.green,
             size: 50,)),
       const Marker(
           point: LatLng(7.537497374130047, 125.75190973683117),
