@@ -1,4 +1,5 @@
-
+import 'package:bethel_app_final/screens/home_page.dart';
+import 'package:bethel_app_final/widgets/navigation_bar.dart';
 import 'package:flutter/material.dart';
 
 import 'pages/map_page.dart';
@@ -14,5 +15,6 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(home: MapPage(),);
+
   }
 }
