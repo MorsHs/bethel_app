@@ -85,7 +85,6 @@ class _MemberLoginPageState extends State<MemberLoginPage> {
       appBar: AppBar(title: const Text(''), automaticallyImplyLeading: true),
       body: SafeArea(
         child: Center(
-          
           child: SingleChildScrollView(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -108,7 +107,6 @@ class _MemberLoginPageState extends State<MemberLoginPage> {
                     ),
                   ),
                 ),
-                
                 const SizedBox(height: 20),
                 MyTextField(
                   controller: emailController,
@@ -179,7 +177,6 @@ class _MemberLoginPageState extends State<MemberLoginPage> {
     );
   }
   signInWithGoogle(){
-
   }
 }
 

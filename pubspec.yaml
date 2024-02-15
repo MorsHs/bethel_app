@@ -16,6 +16,13 @@ dependencies:
 
 
   cupertino_icons: ^1.0.2
+  flutter_map: ^6.1.0 #https://pub.dev/packages/flutter_map
+  latlong2: ^0.9.0 #https://pub.dev/packages/latlong2
+  flutter_map_location_marker: ^8.0.4 #https://pub.dev/packages/flutter_map_location_marker
+  flutter_map_geojson: ^1.0.5 #https://pub.dev/packages/flutter_map_geojson
+  flutter_map_marker_popup: ^6.1.2 #https://pub.dev/packages/flutter_map_marker_popup
+  geolocator: ^10.1.0 #https://pub.dev/packages/geolocator
+  http: ^1.2.0 #https://pub.dev/packages/http
   intl: 0.18.1
   syncfusion_flutter_datepicker: ^24.1.47
   table_calendar: ^3.0.3
@@ -34,7 +41,7 @@ dependencies:
   http: ^1.2.0
   latlong2: ^0.9.0
   flutter_map: ^6.1.0
-
+  
 dev_dependencies:
   flutter_test:
     sdk: flutter

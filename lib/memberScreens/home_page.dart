@@ -16,7 +16,7 @@ void signUserOut() {
 
 class _MemberHomePageState extends State<MemberHomePage> {
   bool _isSearching = false;
-
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -120,5 +120,4 @@ class _MemberHomePageState extends State<MemberHomePage> {
     );
   }
 }
-
 
