@@ -1,8 +1,9 @@
 import 'package:bethel_app_final/constant/color.dart';
+import 'package:bethel_app_final/memberScreens/appointment_page.dart';
 import 'package:bethel_app_final/memberScreens/event_page.dart';
-import 'package:bethel_app_final/memberScreens/message_page.dart';
+import 'package:bethel_app_final/memberScreens/home_page.dart';
+import 'package:bethel_app_final/memberScreens/notifications.dart';
 import 'package:bethel_app_final/memberScreens/profile_page.dart';
-import 'package:bethel_app_final/pages/map_page.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
@@ -15,9 +16,9 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   int _currentTab = 0;
   final List<StatefulWidget> _children = [
-    const MapPage(),
+    const MemberHomePage(),
     const Events(),
-    const Messages(),
+    const Notifications(),
     const Profile(),
   ];
 
@@ -40,12 +41,7 @@ class _HomePageState extends State<HomePage> {
         onTap: (int value) {
           setState(() {
             _currentTab = value;
-            if (_currentTab == 1) { // Check if the selected tab is the "Events" tab
-              // Navigator.push(
-              //   context
-              //   MaterialPageRoute(builder: (context) => const Events()),
-              //
-              // );
+            if (_currentTab == 1) {
             }
           });
         },
@@ -99,7 +95,10 @@ class _HomePageState extends State<HomePage> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          // Handle the onPressed event
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => const AppointmentPage()),
+          );
         },
         child: const Icon(Icons.add, color: appWhite),
         backgroundColor: appGreen,

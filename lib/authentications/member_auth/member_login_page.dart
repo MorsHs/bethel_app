@@ -1,6 +1,5 @@
 import 'package:bethel_app_final/authentications/auth_components/login_button.dart';
 import 'package:bethel_app_final/authentications/auth_components/my_textfield.dart';
-import 'package:bethel_app_final/authentications/auth_components/forgot_password.dart';
 import 'package:bethel_app_final/constant/color.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -121,30 +120,30 @@ class _MemberLoginPageState extends State<MemberLoginPage> {
                   obscureText: true,
                 ),
                 const SizedBox(height: 10),
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 25.0),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    children: [
-                      GestureDetector(
-                        onTap: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => const ForgotPassword(),
-                            ),
-                          );
-                        },
-                        child: const Text(
-                          'Forgot Password?',
-                          style: TextStyle(
-                            color: appGreen,
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
+                // Padding(
+                //   padding: const EdgeInsets.symmetric(horizontal: 25.0),
+                //   child: Row(
+                //     mainAxisAlignment: MainAxisAlignment.end,
+                //     children: [
+                //       GestureDetector(
+                //         onTap: () {
+                //           Navigator.push(
+                //             context,
+                //             MaterialPageRoute(
+                //               builder: (context) => const ForgotPassword(),
+                //             ),
+                //           );
+                //         },
+                //         child: const Text(
+                //           'Forgot Password?',
+                //           style: TextStyle(
+                //             color: appGreen,
+                //           ),
+                //         ),
+                //       ),
+                //     ],
+                //   ),
+                // ),
                 const SizedBox(height: 26),
                 MyButton(
                   onTap: signUserIn,
@@ -177,4 +176,7 @@ class _MemberLoginPageState extends State<MemberLoginPage> {
       ),
     );
   }
+  signInWithGoogle(){
+  }
 }
+
