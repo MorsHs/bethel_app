@@ -1,6 +1,7 @@
-import 'package:bethel_app_final/authentications/auth_components/login_button.dart';
-import 'package:bethel_app_final/authentications/auth_components/my_textfield.dart';
-import 'package:bethel_app_final/constant/color.dart';
+
+import 'package:bethel_app_final/authentications/auth_classes/class_page.dart';
+import 'package:bethel_app_final/authentications/forgot_password.dart';
+import 'package:bethel_app_final/colors/color.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
@@ -82,10 +83,10 @@ class _MemberLoginPageState extends State<MemberLoginPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: AppBar(title: const Text(''), automaticallyImplyLeading: true),
+      appBar: AppBar(title: const Text(''),
+          automaticallyImplyLeading: true),
       body: SafeArea(
         child: Center(
-          
           child: SingleChildScrollView(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -108,7 +109,6 @@ class _MemberLoginPageState extends State<MemberLoginPage> {
                     ),
                   ),
                 ),
-                
                 const SizedBox(height: 20),
                 MyTextField(
                   controller: emailController,
@@ -122,55 +122,55 @@ class _MemberLoginPageState extends State<MemberLoginPage> {
                   obscureText: true,
                 ),
                 const SizedBox(height: 10),
-                // Padding(
-                //   padding: const EdgeInsets.symmetric(horizontal: 25.0),
-                //   child: Row(
-                //     mainAxisAlignment: MainAxisAlignment.end,
-                //     children: [
-                //       GestureDetector(
-                //         onTap: () {
-                //           Navigator.push(
-                //             context,
-                //             MaterialPageRoute(
-                //               builder: (context) => const ForgotPassword(),
-                //             ),
-                //           );
-                //         },
-                //         child: const Text(
-                //           'Forgot Password?',
-                //           style: TextStyle(
-                //             color: appGreen,
-                //           ),
-                //         ),
-                //       ),
-                //     ],
-                //   ),
-                // ),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 25.0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const ForgotPassword(),
+                            ),
+                          );
+                        },
+                        child: const Text(
+                          'Forgot Password?',
+                          style: TextStyle(
+                            color: appGreen,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
                 const SizedBox(height: 26),
                 MyButton(
                   onTap: signUserIn,
                 ),
                 const SizedBox(height: 10),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(
-                      "Don't have an account?",
-                      style: TextStyle(color: Colors.grey[700]),
-                    ),
-                    const SizedBox(width: 4),
-                    GestureDetector(
-                      onTap: widget.onTap,
-                      child: const Text(
-                        'Register now',
-                        style: TextStyle(
-                          color: appGreen,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                    )
-                  ],
-                )
+                // Row(
+                //   mainAxisAlignment: MainAxisAlignment.center,
+                //   children: [
+                //     Text(
+                //       "Don't have an account?",
+                //       style: TextStyle(color: Colors.grey[700]),
+                //     ),
+                //     const SizedBox(width: 4),
+                //     GestureDetector(
+                //       onTap: widget.onTap,
+                //       child: const Text(
+                //         'Register now',
+                //         style: TextStyle(
+                //           color: appGreen,
+                //           fontWeight: FontWeight.bold,
+                //         ),
+                //       ),
+                //     )
+                //   ],
+                // ),
               ],
             ),
           ),
@@ -178,8 +178,4 @@ class _MemberLoginPageState extends State<MemberLoginPage> {
       ),
     );
   }
-  signInWithGoogle(){
-
-  }
 }
-
