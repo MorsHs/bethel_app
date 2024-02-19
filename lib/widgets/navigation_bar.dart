@@ -17,7 +17,7 @@ class _HomePageState extends State<HomePage> {
   int _currentTab = 0;
   final List<StatefulWidget> _children = [
     const MemberHomePage(),
-    const Events(),
+    const EventAppState(),
     const Notifications(),
     const Profile(),
   ];
@@ -74,9 +74,9 @@ class _HomePageState extends State<HomePage> {
               Icons.message_outlined,
               size: 20,
             ),
-            label: 'Messages',
+            label: 'Notifications',
             activeIcon: Text(
-              "MESSAGES",
+              "NOTIFICATIONS",
               style: TextStyle(fontSize: 8),
             ),
           ),

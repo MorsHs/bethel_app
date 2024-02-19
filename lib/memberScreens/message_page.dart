@@ -13,7 +13,7 @@ class _MessagesState extends State<Messages> {
     return Scaffold(
       appBar: AppBar(
          automaticallyImplyLeading: false,
-        title: const Text('Messages'),
+        title: const Text('Notification'),
         actions: [
           IconButton(
             icon: const Icon(Icons.more_vert),
