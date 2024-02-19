@@ -1,11 +1,11 @@
 import 'dart:convert';
+import 'package:bethel_app_final/screens/widgets/navigation_bar.dart';
 import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
 import 'package:http/http.dart' as http;
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:flutter/material.dart';
-import 'package:bethel_app_final/widgets/navigation_bar.dart';
 
 
 
@@ -20,6 +20,7 @@ class MemberAuthServices {
         email: email,
         password: password,
       );
+
 
       User? user = userCredential.user;
       if (user != null) {
@@ -103,68 +104,68 @@ class AuthServiceGoogle {
 
 
 //member authentication for facebook
-class AuthServiceFacebook {
-  final FirebaseAuth _firebaseAuth = FirebaseAuth.instance;
-  final FacebookAuth _facebookAuth = FacebookAuth.instance;
-
-  Future<void> signInWithFacebook(BuildContext context) async {
-    try {
-      // Triggering Facebook Sign In
-      final LoginResult result = await _facebookAuth.login();
-
-      // Check if login is successful
-      if (result.status == LoginStatus.success) {
-        // Extracting access token
-        final AccessToken accessToken = result.accessToken!;
-
-        // Create Facebook auth credentials
-        final OAuthCredential credential =
-        FacebookAuthProvider.credential(accessToken.token);
-
-        // Sign in with Facebook credentials
-        final UserCredential userCredential =
-        await _firebaseAuth.signInWithCredential(credential);
-
-        // Check if user is signed in
-        if (userCredential.user != null) {
-          // Retrieve user profile data from Facebook
-          final profile = await _getUserProfile(result.accessToken!);
-
-          // Save user data to Firestore
-          await UserFirestoreServices.saveUser(
-            userCredential.user!.displayName ?? profile['name'] ?? "",
-            userCredential.user!.email ?? profile['email'] ?? "",
-            userCredential.user!.uid,
-          );
-
-          // Navigate to the homepage
-          Navigator.pushReplacement(
-            context,
-            MaterialPageRoute(
-              builder: (context) => HomePage(),
-            ),
-          );
-        }
-      } else if (result.status == LoginStatus.cancelled) {
-        print('Facebook Sign in cancelled');
-      } else {
-        print('Facebook Sign in failed');
-      }
-    } catch (e) {
-      print("Error signing in with Facebook: $e");
-      // Handle error
-    }
-  }
-
-  Future<Map<String, dynamic>> _getUserProfile(AccessToken accessToken) async {
-    // Fetch user profile data from Facebook Graph API
-    final graphResponse = await http.get(Uri.parse(
-        'https://graph.facebook.com/v2.12/me?fields=name,email&access_token=${accessToken.token}'));
-
-    if (graphResponse.statusCode == 200) {
-      return jsonDecode(graphResponse.body);
-    } else {
-      throw Exception('Failed to load user profile');
-    }
-  }
-}
+// class AuthServiceFacebook {
+//   final FirebaseAuth _firebaseAuth = FirebaseAuth.instance;
+//   final FacebookAuth _facebookAuth = FacebookAuth.instance;
+//
+//   Future<void> signInWithFacebook(BuildContext context) async {
+//     try {
+//       // Triggering Facebook Sign In
+//       final LoginResult result = await _facebookAuth.login();
+//
+//       // Check if login is successful
+//       if (result.status == LoginStatus.success) {
+//         // Extracting access token
+//         final AccessToken accessToken = result.accessToken!;
+//
+//         // Create Facebook auth credentials
+//         final OAuthCredential credential =
+//         FacebookAuthProvider.credential(accessToken.token);
+//
+//         // Sign in with Facebook credentials
+//         final UserCredential userCredential =
+//         await _firebaseAuth.signInWithCredential(credential);
+//
+//         // Check if user is signed in
+//         if (userCredential.user != null) {
+//           // Retrieve user profile data from Facebook
+//           final profile = await _getUserProfile(result.accessToken!);
+//
+//           // Save user data to Firestore
+//           await UserFirestoreServices.saveUser(
+//             userCredential.user!.displayName ?? profile['name'] ?? "",
+//             userCredential.user!.email ?? profile['email'] ?? "",
+//             userCredential.user!.uid,
+//           );
+//
+//           // Navigate to the homepage
+//           Navigator.pushReplacement(
+//             context,
+//             MaterialPageRoute(
+//               builder: (context) => HomePage(),
+//             ),
+//           );
+//         }
+//       } else if (result.status == LoginStatus.cancelled) {
+//         print('Facebook Sign in cancelled');
+//       } else {
+//         print('Facebook Sign in failed');
+//       }
+//     } catch (e) {
+//       print("Error signing in with Facebook: $e");
+//       // Handle error
+//     }
+//   }
+//
+//   Future<Map<String, dynamic>> _getUserProfile(AccessToken accessToken) async {
+//     // Fetch user profile data from Facebook Graph API
+//     final graphResponse = await http.get(Uri.parse(
+//         'https://graph.facebook.com/v2.12/me?fields=name,email&access_token=${accessToken.token}'));
+//
+//     if (graphResponse.statusCode == 200) {
+//       return jsonDecode(graphResponse.body);
+//     } else {
+//       throw Exception('Failed to load user profile');
+//     }
+//   }
+// }

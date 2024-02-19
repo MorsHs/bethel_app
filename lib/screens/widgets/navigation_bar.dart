@@ -1,4 +1,4 @@
-import 'package:bethel_app_final/colors/color.dart';
+import 'package:bethel_app_final/constant/colors/color.dart';
 import 'package:bethel_app_final/memberScreens/appointment_page.dart';
 import 'package:bethel_app_final/memberScreens/event_page.dart';
 import 'package:bethel_app_final/memberScreens/home_page.dart';

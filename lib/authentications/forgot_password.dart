@@ -1,4 +1,4 @@
-import 'package:bethel_app_final/colors/color.dart';
+import 'package:bethel_app_final/constant/colors/color.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 

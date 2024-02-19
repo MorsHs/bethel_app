@@ -1,8 +1,8 @@
-import 'package:bethel_app_final/Services/Functions/Member_Functions/member_functions.dart';
 import 'package:bethel_app_final/authentications/auth_classes/class_page.dart';
 import 'package:bethel_app_final/authentications/member_auth/member_auth_page.dart';
 import 'package:bethel_app_final/authentications/member_auth/member_register_page.dart';
-import 'package:bethel_app_final/colors/color.dart';
+import 'package:bethel_app_final/back_end/Services/Member_Functions/member_functions.dart';
+import 'package:bethel_app_final/constant/colors/color.dart';
 import 'package:bethel_app_final/memberScreens/screen_pages/profile_screen_pages/privacy_policy.dart';
 import 'package:bethel_app_final/screens/terms_page.dart';
 import 'package:flutter/material.dart';
@@ -103,13 +103,13 @@ class OptionToPlatformToLogin extends StatelessWidget {
                             children: [
                               TextButton(
                                 onPressed: () async {
-                                  try {
-                                    // Invoke signInWithFacebook method from AuthServiceFacebook
-                                    await AuthServiceFacebook().signInWithFacebook(context);
-                                  } catch (e) {
-                                    print("Error signing in with Facebook: $e");
-                                    // Handle error
-                                  }
+                                  // try {
+                                  //   // Invoke signInWithFacebook method from AuthServiceFacebook
+                                  //   await AuthServiceFacebook().signInWithFacebook(context);
+                                  // } catch (e) {
+                                  //   print("Error signing in with Facebook: $e");
+                                  //   // Handle error
+                                  // }
                                 },
                                 child: const Row(
                                   children: [

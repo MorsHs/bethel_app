@@ -1,4 +1,4 @@
-import 'package:bethel_app_final/colors/color.dart';
+import 'package:bethel_app_final/constant/colors/color.dart';
 import 'package:bethel_app_final/memberScreens/screen_pages/profile_screen_pages/calendar.dart';
 import 'package:bethel_app_final/memberScreens/screen_pages/profile_screen_pages/my_profile.dart';
 import 'package:bethel_app_final/memberScreens/screen_pages/profile_screen_pages/notification.dart';
