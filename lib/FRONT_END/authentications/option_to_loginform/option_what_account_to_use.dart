@@ -54,8 +54,8 @@ class OptionToPlatformToLogin extends StatelessWidget {
                     }
                   },
                   style: ElevatedButton.styleFrom(
-                    primary: appBlue,
-                    onPrimary: appWhite,
+                    foregroundColor: appBlue,
+                    backgroundColor: appWhite,
                   ),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,

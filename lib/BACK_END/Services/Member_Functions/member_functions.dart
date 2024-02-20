@@ -1,7 +1,5 @@
-import 'dart:convert';
+
 import 'package:bethel_app_final/FRONT_END/screens/widgets/navigation_bar.dart';
-import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
-import 'package:http/http.dart' as http;
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';

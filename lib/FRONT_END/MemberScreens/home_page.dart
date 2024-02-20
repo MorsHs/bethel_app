@@ -91,7 +91,7 @@ class _MemberHomePageState extends State<MemberHomePage> {
                                 'locate outreach churches',
                                 style: Theme.of(context)
                                     .textTheme
-                                    .bodyText1!
+                                    .bodyLarge!
                                     .copyWith(fontWeight: FontWeight.bold),
                               ),
                             ],
